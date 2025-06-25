@@ -165,9 +165,13 @@ if __name__ == "__main__":
         val_splits.append((X_rgb_val, X_lidar_val, X_hsi_val, y_cls_val, pos_feat_val, box_feat_val, height_feat_val))
         
         
+    # Using date.today() to get only the current date
+    current_date_only = datetime.date.today()
+    print(f"Current date (using date.today()): {current_date_only}")
+    
     # Define the base save path
     base_save_path = os.getcwd() + "/trained_models/image_reconstruction/continuous_triplet/noL2/"
-    base_save_path += f"{modality_chosen}/class_{parameters['classes']}/patch_size_{parameters['patch_size']}/"
+    base_save_path += f"{modality_chosen}/class_{parameters['classes']}/patch_size_{parameters['patch_size']}/{current_date_only}/"    
     base_save_path += f"_emb{parameters['embedding_dimension']}_batch{parameters['batch_size']}_margin"
     base_save_path += f"{parameters['margin']}_test_size{parameters['test_size']}_cls_weight{parameters['cls_weight']}"
 
