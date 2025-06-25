@@ -1,0 +1,11 @@
+__pycache__
+data_files/
+figures/
+logs/
+trained_models/
+ipynb_checkpoints/
+*.ipynb
+*.npz
+*.pkl
+*.out
+
