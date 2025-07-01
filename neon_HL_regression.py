@@ -202,12 +202,12 @@ if __name__ == "__main__":
     print(f"Current date (using date.today()): {current_date_only}")
 
     # Define the base save path
-    base_save_path = os.getcwd() + "/trained_models/continuous_box_label_regression/continuous_triplet/noL2/MSE/"
+    base_save_path = os.getcwd() + "/trained_models/continuous_height_label_regression/continuous_triplet/noL2/MSE/"
     # base_save_path += f"{modality_chosen}/{modality_chosen}_emb"
     # base_save_path += f"{parameters['embedding_dimension']}_batch{parameters['batch_size']}_margin"
     # base_save_path += f"{parameters['margin']}_test_size{parameters['test_size']}_cls_weight{parameters['cls_weight']}"
     
-    base_save_path += f"{modality_chosen}/concatenate/class_{parameters['classes']}/patch_size_{parameters['patch_size']}/{current_date_only}/"
+    base_save_path += f"{modality_chosen}/class_{parameters['classes']}/patch_size_{parameters['patch_size']}/{current_date_only}/"
     base_save_path += f"_emb{parameters['embedding_dimension']}_batch{parameters['batch_size']}_margin"
     base_save_path += f"{parameters['margin']}_test_size{parameters['test_size']}_cls_weight{parameters['cls_weight']}"
 
@@ -315,7 +315,7 @@ if __name__ == "__main__":
             train_embeddings_hsi = embedding_model_hsi.predict(X_hsi_train)
             val_embeddings_hsi = embedding_model_hsi.predict(X_hsi_val)
 
-            Concatenate along the feature dimension
+            # Concatenate along the feature dimension
             train_embeddings = np.concatenate((train_embeddings_rgb, train_embeddings_lidar, train_embeddings_hsi), axis=1)
             val_embeddings = np.concatenate((val_embeddings_rgb, val_embeddings_lidar, val_embeddings_hsi), axis=1)
             

@@ -202,12 +202,12 @@ if __name__ == "__main__":
     print(f"Current date (using date.today()): {current_date_only}")
 
     # Define the base save path
-    base_save_path = os.getcwd() + "/trained_models/continuous_box_label_regression/continuous_triplet/noL2/MSE/"
+    base_save_path = os.getcwd() + "/trained_models/continuous_position_label_regression/continuous_triplet/noL2/MSE/"
     # base_save_path += f"{modality_chosen}/{modality_chosen}_emb"
     # base_save_path += f"{parameters['embedding_dimension']}_batch{parameters['batch_size']}_margin"
     # base_save_path += f"{parameters['margin']}_test_size{parameters['test_size']}_cls_weight{parameters['cls_weight']}"
     
-    base_save_path += f"{modality_chosen}/concatenate/class_{parameters['classes']}/patch_size_{parameters['patch_size']}/{current_date_only}/"
+    base_save_path += f"{modality_chosen}/class_{parameters['classes']}/patch_size_{parameters['patch_size']}/{current_date_only}/"
     base_save_path += f"_emb{parameters['embedding_dimension']}_batch{parameters['batch_size']}_margin"
     base_save_path += f"{parameters['margin']}_test_size{parameters['test_size']}_cls_weight{parameters['cls_weight']}"
 
